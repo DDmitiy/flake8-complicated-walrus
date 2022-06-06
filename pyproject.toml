@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flake8-complicated-walrus"
-version = "1.0.0"
+version = "1.0.1"
 license = "MIT"
 description = "This Flake8 plugin for checking complicated assignment expressions."
 authors = ["Dudov Dmitry <dudov.dm@gmail.com>"]

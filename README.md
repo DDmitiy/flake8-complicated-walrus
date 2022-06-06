@@ -2,9 +2,9 @@
 
 This *Flake8* plugin for checking complicated assignment expressions.
 There are 3 levels for this linter:
-1. RESTRICT_ALL - **restrict** use assignment expressions **in any case**
-2. COMPLICATED - **restrict** use assignment expressions **in complex if conditions**
-3. ALLOW_ALL - **allow** use assignment expressions **in any case**
+1. *restrict-all* - **restrict** use assignment expressions **in any case**
+2. *restrict-complicated* - **restrict** use assignment expressions **in complex if conditions**
+3. *allow-all* - **allow** use assignment expressions **in any case**
 
 # Quick Start Guide
 
@@ -20,7 +20,7 @@ There are 3 levels for this linter:
 3. Add to file following: 
    
         [flake8]  
-        restrict-walrus-level = complicated  
+        restrict-walrus-level = restrict-complicated  
 
 3. Run flake8::
 
