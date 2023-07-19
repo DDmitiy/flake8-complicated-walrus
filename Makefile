@@ -11,14 +11,14 @@ test:
 
 lint:
 	flake8 --jobs 1 --statistics --show-source $(CODE)
-	pylint --jobs 1 --rcfile=setup.cfg $(PYLINT_CODE)
+	pylint --jobs 1 --rcfile=pyproject.toml $(PYLINT_CODE)
 	mypy $(MYPY_CODE)
 	black --target-version py38 --skip-string-normalization --check $(CODE)
 	pytest --dead-fixtures --dup-fixtures
 
 format:
 	autoflake --recursive --in-place --remove-all-unused-imports $(CODE)
-	isort --apply --recursive $(CODE)
+	isort $(CODE)
 	black --target-version py38 --skip-string-normalization $(CODE)
 	unify --in-place --recursive $(CODE)
 

@@ -97,7 +97,7 @@ class Plugin:
         """
         Any module from specified package could not be import in another package
         """
-        visitor = Visitor(self._restrict_walrus_level)
+        visitor = Visitor(self._restrict_walrus_level)  # type: ignore
         visitor.visit(self._tree)
         for line, col, msg in visitor.errors:
             yield line, col, msg, type(self)
