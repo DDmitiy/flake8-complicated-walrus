@@ -1,3 +1,4 @@
+# pylint:disable=protected-access
 import ast
 from typing import List
 
@@ -7,7 +8,7 @@ from flake8_complicated_walrus import FCW100, FCW200, Plugin, RestrictWalrusLeve
 def lint_code(loc: str, restrict_walrus_level: RestrictWalrusLevels) -> List[str]:
     tree = ast.parse(loc)
     plugin = Plugin(tree)
-    plugin._restrict_walrus_level = restrict_walrus_level
+    plugin._restrict_walrus_level = restrict_walrus_level  # type: ignore
     return [f'{line}:{col} {message}' for line, col, message, _ in plugin.run()]
 
 
